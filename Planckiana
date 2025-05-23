@@ -39,12 +39,14 @@ corportipo={
     "K":"#ffd2a1",
     "M":"#ffcc6f"
 }
-cor1=corportipo[tipo1]
-cor2=corportipo[tipo2]
 
 #Definição do tipo de estrela individualmente: / Defining the star type individually:
 tipo1=tipoestelar(T1)
 tipo2=tipoestelar(T2)
+
+#Atribuição de cores: / Color assignment:
+cor1=corportipo[tipo1]
+cor2=corportipo[tipo2]
 
 #Planckiana B_λ(T1) da primeira estrela: / Planckian B_λ(T1) of the first star:
 def Planck1(compond):
