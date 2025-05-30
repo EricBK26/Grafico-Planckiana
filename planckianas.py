@@ -17,8 +17,8 @@ c=29979245800 #Velocidade da luz (speed of light): cm/s
 k=1.38*(10**(-16)) #Boltzmann: ergs/K
 
 #Automatização das funções: / Automation of functions:
-T1=float(input("Temperatura da estrela 1 em Kelvin (K): / Temperature of star 1 in Kelvin (K):"))
-T2=float(input("Temperatura da estrela 2 em Kelvin (K): / Temperature of star 2 in Kelvin (K):"))
+T1=int(input("Temperatura da estrela 1 em Kelvin (K): / Temperature of star 1 in Kelvin (K):"))
+T2=int(input("Temperatura da estrela 2 em Kelvin (K): / Temperature of star 2 in Kelvin (K):"))
 print("Se não quiser simular binária, colocar valor '1' em ambas constantes. / If you don't want to simulate binary, put the value '1' in both constants.")
 C1=float(input("Constante da estrela 1 para simular binária: / Star constant 1 to simulate binary:"))
 C2=float(input("Constante da estrela 2 para simular binária: / Star constant 2 to simulate binary:"))
