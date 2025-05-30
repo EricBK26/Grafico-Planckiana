@@ -7,10 +7,12 @@ h=6.626*(10**(-27)) #Planck: ergs.s
 c=29979245800 #Velocidade da luz (speed of light): cm/s
 k=1.38*(10**(-16)) #Boltzmann: ergs/K
 
-#Automatização das funções:
-#Automation of functions:
-T1=int(input("Temperatura da estrela 1 em Kelvin (K):"))
-T2=int(input("Temperatura da estrela 2 em Kelvin (K):"))
+#Automatização das funções: / Automation of functions:
+T1=float(input("Temperatura da estrela 1 em Kelvin (K): / Temperature of star 1 in Kelvin (K):"))
+T2=float(input("Temperatura da estrela 2 em Kelvin (K): / Temperature of star 2 in Kelvin (K):"))
+print("Se não quiser simular binária, colocar valor '1' em ambas constantes. / If you don't want to simulate binary, put the value '1' in both constants.")
+C1=float(input("Constante da estrela 1 para simular binária: / Star constant 1 to simulate binary:"))
+C2=float(input("Constante da estrela 2 para simular binária: / Star constant 2 to simulate binary:"))
 
 #Automatização para características das estrela: / Automation for star features:
 def tipoestelar(T):
@@ -72,11 +74,11 @@ y_2=Planck2(x)
 #Normalizando as intensidades para a soma: / Normalizing the intensities to the sum:
 y_1_norm=y_1/np.max(y_1)
 y_2_norm=y_2/np.max(y_2)
-y_sum_norm=y_1_norm+y_2_norm
+y_sum_norm=(C1*y_1_norm)+(C2*y_2_norm)
 
 #Plotagem do gráfico da primeira estrela: / First Star Graph Plot:
 plt.figure(figsize=(10,6))
-plt.plot(x,y_1,color=cor1,label=f"T={T1}K")
+plt.plot(x,y_1,color=cor1,label=f"T={T1} K")
 plt.title("Planckiana anã branca")
 #plt.title(f"Planckiana estrela tipo {tipo1}") .Caso queira utilizar para uma estrela qualquer, colocar "#" no comando de título acima e apagar "#" desse e esse texto entre pontos / If you want to use it for any star, put "#" in the title command above and delete "#" from this and this text between dots.
 plt.xlabel("λ [Å]")
@@ -87,7 +89,7 @@ plt.show()
 
 #Plotagem do gráfico da segunda estrela: / Second Star Graph Plot:
 plt.figure(figsize=(10,6))
-plt.plot(x,y_2,color=cor2,label=f"T={T2}K")
+plt.plot(x,y_2,color=cor2,label=f"T={T2} K")
 plt.title(f"Planckiana estrela tipo {tipo2}")
 plt.xlabel("λ [Å]")
 plt.ylabel("Intensidade [ergs.cm⁻².s⁻¹.sr⁻¹.cm⁻¹]")
@@ -97,9 +99,9 @@ plt.show()
 
 #Plotagem do gráfico das duas estrelas somadas: / Plot of the graph of the two stars added together:
 plt.figure(figsize=(10,6))
-plt.plot(x, y_sum_norm, color="gray", label=f"T={T1}K + T={T2}K")
-plt.title(f"Soma das planckianas, anã branca e do tipo {tipo2}")
-#plt.title(f"Soma das planckianas, estrelas do tipo {tipo1)} e do tipo {tipo2}") .Caso queira utilizar para duas estrelas quaisquer, colocar "#" no comando de título acima e apagar "#" desse e esse texto entre pontos / If you want to use it for any two stars, put "#" in the title command above and delete "#" from this and this text between dots.
+plt.plot(x, y_sum_norm, color="black", label=f"T={T1} K + T={T2} K")
+plt.title(f"Soma das planckianas, anã branca e do tipo {tipo2} simulando Binária")
+#plt.title(f"Soma das planckianas, estrelas do tipo {tipo1)} e do tipo {tipo2} simulando binária") .Caso queira utilizar para duas estrelas quaisquer, colocar "#" no comando de título acima e apagar "#" desse e esse texto entre pontos / If you want to use it for any two stars, put "#" in the title command above and delete "#" from this and this text between dots.
 plt.xlabel("λ [Å]")
 plt.ylabel("Intensidade relativa [ergs.cm⁻².s⁻¹.sr⁻¹.cm⁻¹]")
 plt.legend()
