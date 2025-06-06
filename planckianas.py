@@ -109,8 +109,8 @@ plt.show()
 #Plotagem do gráfico das duas estrelas somadas: / Plot of the graph of the two stars added together:
 plt.figure(figsize=(10,6))
 plt.plot(x, y_sum_norm, color="black", label=f"T={T1} K + T={T2} K")
-plt.title(f"Soma das planckianas, anã branca e do tipo {tipo2} simulando Binária")
-#plt.title(f"Soma das planckianas, estrelas do tipo {tipo1)} e do tipo {tipo2} simulando binária") .Caso queira utilizar para duas estrelas quaisquer, colocar "#" no comando de título acima e apagar "#" desse e esse texto entre pontos / If you want to use it for any two stars, put "#" in the title command above and delete "#" from this and this text between dots.
+plt.title(f"Soma das planckianas, anã branca e do tipo {tipo2} simulando Binária de razão {C1}:{C2}")
+#plt.title(f"Soma das planckianas, estrelas do tipo {tipo1)} e do tipo {tipo2} simulando Binária de razão {C1}:{C2}") .Caso queira utilizar para duas estrelas quaisquer, colocar "#" no comando de título acima e apagar "#" desse e esse texto entre pontos / If you want to use it for any two stars, put "#" in the title command above and delete "#" from this and this text between dots.
 plt.xlabel("λ [Å]")
 plt.ylabel("Intensidade relativa [ergs.cm⁻².s⁻¹.sr⁻¹.cm⁻¹]")
 plt.legend()
