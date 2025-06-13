@@ -74,7 +74,7 @@ y_2=Planck2(x)
 #Normalizando as intensidades para a soma: / Normalizing the intensities to the sum:
 y_1_norm=y_1/np.max(y_1)
 y_2_norm=y_2/np.max(y_2)
-y_sum_norm=(C1*y_1_norm)+(C2*y_2_norm)
+yp_sum_norm=(C1*y_1_norm)+(C2*y_2_norm)
 
 #Plotagem do gráfico da primeira estrela: / First Star Graph Plot:
 plt.figure(figsize=(10,6))
@@ -99,13 +99,44 @@ plt.show()
 
 #Plotagem do gráfico das duas estrelas somadas: / Plot of the graph of the two stars added together:
 plt.figure(figsize=(10,6))
-plt.plot(x, y_sum_norm, color="black", label=f"T={T1} K + T={T2} K")
+plt.plot(x, yp_sum_norm, color="black", label=f"T={T1} K + T={T2} K")
 plt.title(f"Soma das planckianas, anã branca e do tipo {tipo2} simulando Binária de razão {C1}:{C2}")
-#plt.title(f"Soma das planckianas, estrelas do tipo {tipo1)} e do tipo {tipo2} simulando Binária de razão {C1}:{C2}") .Caso queira utilizar para duas estrelas quaisquer, colocar "#" no comando de título acima e apagar "#" desse e esse texto entre pontos / If you want to use it for any two stars, put "#" in the title command above and delete "#" from this and this text between dots.
+#plt.title(f"Soma das planckianas, estrelas do tipo {tipo1)} e do tipo {tipo2} simulando binária de razão {C1}:{C2}") .Caso queira utilizar para duas estrelas quaisquer, colocar "#" no comando de título acima e apagar "#" desse e esse texto entre pontos / If you want to use it for any two stars, put "#" in the title command above and delete "#" from this and this text between dots.
 plt.xlabel("λ [Å]")
 plt.ylabel("Intensidade relativa [ergs.cm⁻².s⁻¹.sr⁻¹.cm⁻¹]")
 plt.legend()
 plt.grid(True)
+plt.show()
+
+#Plotagem de uma tabela contendo os 3 gráficos gerados anteriormente: / Plotting a table containing the 3 graphs generated previously:
+fig,axes=plt.subplots(1,3,figsize=(10,6))
+ax1=axes[0]
+ax2=axes[1]
+ax3=axes[2]
+#Gráfico 1: / Graph 1:
+ax1.plot(x,y_1,color=cor1,label=f"T={T1} K")
+ax1.set_title(f"T={T1} K")
+ax1.set_xlabel("λ [Å]")
+ax1.set_ylabel("Intensidade")
+ax1.legend()
+ax1.grid(True)
+#Gráfico 2: / Graph 2:
+ax2.plot(x,y_2,color=cor2,label=f"T={T2} K")
+ax2.set_title(f"T={T2} K")
+ax2.set_xlabel("λ [Å]")
+ax2.set_ylabel("Intensidade")
+ax2.legend()
+ax2.grid(True)
+#Gráfico 3 / Graph 3:
+ax3.plot(x, yp_sum_norm, color="black", label=f"T={T1} K + T={T2} K")
+ax3.set_title(f"Soma (normalizada)")
+ax3.set_xlabel("λ [Å]")
+ax3.set_ylabel("Intensidade relativa")
+ax3.legend()
+ax3.grid(True)
+#Dados para a junção dos 3 gráficos: / Data for joining the 3 graphs:
+plt.tight_layout()
+fig.suptitle('Todos as Planckianas', y=1, fontsize=10)
 plt.show()
 
 #Aproveitem! / Enjoy!
