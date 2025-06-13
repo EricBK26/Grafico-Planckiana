@@ -109,7 +109,7 @@ plt.grid(True)
 plt.show()
 
 #Plotagem de uma tabela contendo os 3 gráficos gerados anteriormente: / Plotting a table containing the 3 graphs generated previously:
-fig,axes=plt.subplots(1,3,figsize=(10,6))
+fig,axes=plt.subplots(3,1,figsize=(6,10,))
 ax1=axes[0]
 ax2=axes[1]
 ax3=axes[2]
